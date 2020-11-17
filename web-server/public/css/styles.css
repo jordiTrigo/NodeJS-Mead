@@ -1,0 +1,70 @@
+body {
+    color: #333333;
+    font-family: arial;
+    max-width: 650px; /* Allows us to set a max width for the site. It constraints how wide 
+                         our content can be */
+    margin: 0 auto; /* Spacing property. We use it to evenly distribute space on the left 
+                       and the right of the body, so all of that content shows up in the center.
+                       0 is the margin value we're applying to the top and the bottom. Auto is
+                       going to evenly distribute the space on the left and the rigth. */
+    padding: 0 16px; /* 0 because we are not trying to add any additional space above or below.
+                        In this case, we are putting 16 pixels between our body content and
+                        the side of the browser window to prevent things from getting jammed up
+                        against the edge of it. */
+
+    /* Enabled flex box (advanced topic in CSS). En aquesta CSS està vinculat amb la classe main-content */
+    display: flex;
+    flex-direction: column; /* Allows us to distribute the elements from top to bottom, because
+                               the default is from left to right. */
+    min-height: 100vh; /* The minimun height of the body is equal to the browser's height wich
+                          is 100vh (vh=viewport height). So in this case we have 100% of the
+                          viewport height, the viewport being this box where tour content 
+                          shows up */
+}
+
+.main-content {
+    flex-grow: 1; /* We apply one more flex box style, flex-grow. This allows a given element 
+                     to grow to take up as much space as it needs. In this case, is 1, so it tells
+                     to the flex box that the main content should take up all leftover space. */
+}
+
+footer {
+    color: #888888;
+    border-top: 1px solid #eeeeee;
+    margin-top: 16px; /* Space between the box that represents the footer and the rest of elements */
+    padding: 16px 0; /* Space inside the footer */
+}
+
+h1 {
+    font-size: 64px;
+    margin-top: 16px;
+}
+
+header a {  /* It looks in the header and inside it for the a that represents the links.
+               So here we are just targeting our links inside of the header. */
+    color: #888888;
+    margin-right: 16px; /* Used to put some space between all of this links items */
+    text-decoration: none; /* To remove the underline of the links in the header, we use none. */
+}
+
+.portrait{ /* We use a class selector (named it portrait) that allows us to select a specifig
+              set of elements. It's dot followed by the class name (.portrait). To use this
+              class we have to set up a class attribute on our HTML elements where we want these
+              styles to be applied. So we will go to the about.hbs and we will use the class there. */
+    width: 250px;
+}
+
+input {
+    border: 1px solid #cccccc; /* 1px=width of the border, solid=the type of border, #cccccc=color */
+    padding: 8px; /* Put some space between the text and the border */
+}
+
+button {
+    cursor: pointer; /* cursor allows us to customize the apperance of the cursor when we're
+                        hovering over it */
+
+    border: 1px solid #888888;
+    background: #888888;
+    color: white;
+    padding: 8px;
+}
