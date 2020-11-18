@@ -25,6 +25,8 @@ const path = require('path')
 const express = require('express')
 const app = express()
 
+const port = process.env.PORT || 3000
+
 // Info: https://expressjs.com/en/4x/api.html#app.set
 
 // Define paths for Express config
@@ -138,6 +140,18 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+// We have to change this lines, because we are using Heroku and Heroku will provide us
+// with a port value that we have to use when our app is running on Heroku. This isn't
+// a static value we can hard code in the project, this is a value that changes over time
+// and it's provided to our app via an environment variable. An environment variable is
+// a key/value pair set at the OS level).
+// app.listen(3000, () => {
+//     console.log('Server is up on port 3000.')
+// })
+// Hem de definir una nova constant port just A SOTA DE LA CREACIÓ DE l'app express i
+// és la que usarem aquí. Notem que process.env.PORT tindrà un valor que serà injectat
+// per Heroku...
+
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}.`)
 })
